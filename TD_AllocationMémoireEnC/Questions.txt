@@ -1,0 +1,114 @@
+Théo MATHIOT
+
+TD Allocation Mémoire en C
+
+Questions:
+1. comment la mémoire est-elle organisée dans un processus linux?
+
+La mémoire d'un processus Linux est organisée en plusieurs segments principaux :- le segment de texte
+- le segment de données
+- le segment BSS
+- le tas
+- la pile
+
+2. Le code source d'un programme est-l en mémoire? ou?
+
+Le code source textuel n'est pas chargé en mémoire. C'est le code machine qui y réside, dans le segment de texte.
+
+3. Les variables d'un programme sont-elles en mémoire? ou?
+
+Les variables sont stockées en mémoire à des endroits qui dépendent de leur
+nature :
+- Les variables globales et statiques vont dans le segment de données ou le BSS.
+- Les variables locales vivent sur la pile (stack).
+- Les variables allouées dynamiquement résident dans le tas (heap).
+
+4. Les variables sont-elles stockées de manière permanentes?
+
+Non, seules les variables globales et statiques sont conservées pendant toute
+la durée de vie du processus. Les variables locales sont éphémères.
+
+5. Y a-t-il des zones mémoires temporaires?
+
+Oui, la pile (stack) constitue une zone mémoire temporaire dédiée aux variables locales et aux paramètres des fonctions.
+
+6. Comment les variables des fonctions sont elles gérées?
+
+Les variables des fonctions (locales) sont gérées automatiquement sur la pile
+via des cadres de pile (stack frames). Elles sont créées à l'appel de la
+fonction et détruites dès que celle-ci se termine.
+
+7. Comment définirun tableau de taille fixe dans une fonction
+
+Un tableau de taille fixe se définit directement avec une taille constante
+connue à la compilation : int tab[10];. Il est placé sur la pile.
+
+8. Comment définir un tableau dont on ne connait pas la taille d'avance?
+
+Un tableau de taille variable (inconnue à l'avance) se définit par allocation
+dynamique : int *tab = malloc(n * sizeof(int));.
+
+9. Qu'est-ce qu'une allocation statique?
+
+Une allocation statique (ou automatique) correspond à une réservation de
+mémoire dont la taille et l'emplacement sont figés à la compilation.
+
+10. Qu'est-ce qu'une allocation dynamique?
+
+Une allocation dynamique désigne une réservation de mémoire effectuée en cours
+d'exécution (runtime) selon les besoins du programme.
+
+11. Comment s'appelle la zone ou se fait l'allocation dynamique?
+
+Le tas (heap).
+
+12. Ou est cette zone?
+
+Le tas se situe dans l'espace d'adressage du processus, traditionnellement
+juste au-dessus des segments de données et du BSS, et s'étend vers les
+adresses hautes.
+
+13. Quelles sont les tailles des zones d'allocation statique et dynamique?
+
+La taille de l'allocation statique est fixée rigidement par le code. La taille
+de l'allocation dynamique est flexible et limitée uniquement par la mémoire
+virtuelle disponible sur le système.
+
+14. Comment s'utilise la fonction malloc?
+
+malloc s'utilise en spécifiant le nombre d'octets à réserver :
+int *p = malloc(10 * sizeof(int));. Il renvoie un pointeur vers le bloc
+ou NULL en cas d'échec.
+
+15. Comment s'utilise la fonction free?
+
+free s'utilise en passant le pointeur obtenu lors de l'allocation : free(p);
+pour restituer la mémoire au système et éviter les fuites.
+
+16. Comment accéder à la mémoire allouée?
+
+On accède à la mémoire allouée via le pointeur retourné par malloc, soit par
+déréférencement direct, soit en utilisant la syntaxe des tableaux (p[i]).
+
+17. Combien peut-ou allouer de mémoire?
+
+On peut allouer autant de mémoire que le système d'exploitation et la machine
+le permettent (mémoire RAM disponible cumulée à l'espace de swap).
+
+18. Peut-on créer des variables de cette manière?
+
+Pas de variables nommées au sens du compilateur, mais on manipule des blocs de
+mémoire anonymes pointés qui jouent exactement le même rôle.
+
+19. Qu'est-ce qu'un pointeur? Peut on faire des opérations sur les pointeurs?
+
+Un pointeur est une variable qui contient une adresse mémoire. Oui, il est
+possible d'effectuer des opérations arithmétiques dessus (comme ajouter ou
+soustraire des entiers pour parcourir des blocs).
+
+20. Si p est un pointeur, que vaut p+1? Qu'est ce que * et &?
+
+p+1 pointe vers l'élément suivant en mémoire, c'est-à-dire l'adresse de p
+augmentée de la taille en octets du type pointé. L'opérateur & récupère
+l'adresse d'une variable, tandis que * permet d'accéder à la valeur située à
+l'adresse pointée.

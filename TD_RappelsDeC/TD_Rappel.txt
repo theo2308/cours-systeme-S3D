@@ -1,0 +1,94 @@
+Théo MATHIOT S3D
+
+TD Rappels de C
+
+1. De quand sate le C? de quoi le C s'inspire-t-il?
+Le C date de 1972 et s'inspire et dérive du langage B
+
+2. Qu'est ce que BCPL?
+BCPL est un ancioen langage de programmation destiné à écrire delogiciels systeme et des compilateurs
+
+3. y a t-il plusieurs verisons de C? quelle est la version la plus récente?
+Oui, il ya plusieurs version de C notamment la derniere en date le C23
+
+4. Quel est le lien entre le C et UNIX? quel est le lien entre le C et Java?
+le lien entre C et UNIX est que le C a été créer spécialement pour réécrire et développer le systeme d'exploitation UNIX
+le lien entre C et Java est que Java est un langage suivant la forme d'écriture du C il est même qualifier de C++ sans les pointeurs
+
+5.quelle est la structure d'un programme C?
+Le programme C se structure en 3 sections étant:
+- Les déclarations globales
+- La fonction principal
+- Les fonction secondaires
+
+6.Qu'est ce que le préprocesseur et a quoi sert-il?
+Le préprocesseur est un programme informatique qui transforme un code source ou un texte avant que celui-ci ne soit transmis à un autre logiciel, généralement un compilateur ou un
+interpréteur.
+
+Il sert a agir comme un outil automatisé de "recherche et remplacement" et de manipulation textuelle, sans comprendre la logique ou la syntaxe profonde du langage
+
+7.QU'est ce qu'un fichier Makefile
+Un Makefile est un fichier texte contenant un ensemble de règles et de commandes, utilisé par le programme make pour automatiser des tâches.
+
+8. Quels sont les types de bases du C?
+les types de bases du C sont les entiers, les caractères, les flottants
+
+9. Qu'est ce qu'une structure?
+Une structure est un type de donnée personnalisé qui permet de regrouper plusieurs variables sous un même nome
+
+10. Qu'est-ce qu'un pointeur?
+Un pointeur est une variable qui ne contient pas une valeur direct mais l'adresse d'une
+autre variable
+
+11. Comment savoir la taille d'une variable?
+pour connaître la taille en octets on utilise l'opérateur sizeof
+
+12. Comment connaître la valeur des octets d'un entier?
+on utilise un pointeur de type unsigned char* pour inspecter la mémoire octet par octet
+
+13.Comment connaitre la valeur d'un octet connaissant son adresse?
+Pour lire un octet précis en mémoire, vous devez utiliser un pointeur de type unsigned
+char et appliquer l'opérateur de déréférencement *
+
+14.Comment est stocké un tableau à une dimension?
+un tableau à une dimension est stocké sous la forme d'un bloc de mémoire unique,
+contigu et ordonné
+
+15.Comment est stockées un tableau a deux dimensions?
+un tableau à deux dimensions est stocké de manière linéaire et contiguë en mémoire,
+ligne par ligne
+
+
+16.Dans quel ordre les octets d'un entier sur 16 bits sont ils stockées?
+Les octets d'un entier sur 16 bits sont stockés dépend de l'architecture du processeur
+il en existe 2:
+
+   - Le petit-boutiste
+L'octet de poids faible les 8 bits de droite est stocké en premier à l'adresse mémoire
+la plus basse
+
+   - Le gros-boutiste
+L'octet de poids fort les 8 bits de gauche est stocké en premier. C'est l'ordre de
+lecture naturel pour un humain.
+
+17.Comment peut on manipuler des chaines de caractères?
+on peux les manipuler avec ses opération:
+- Déclaration char
+- STRLEN()
+- strcpy()
+- strcat()
+- strcmp()
+- strstr()
+
+
+18.Est-ce que les chaines permettent de stocker l'UTF8?
+Oui, les chaînes de caractères en C permettent de stocker de l'UTF-8
+
+
+19.Qu'est ce qu'un débogueur? donnez un exemple de débogueur pour C et pour Java
+Un debogueur est un logiciel qui permet d'analyser le comportement d'un programme
+informatique pas à pas afin de détecter et de corriger les erreurs
+
+Pour C:GDB
+
+Pour Java: JDB
