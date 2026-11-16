@@ -112,3 +112,23 @@ p+1 pointe vers l'élément suivant en mémoire, c'est-à-dire l'adresse de p
 augmentée de la taille en octets du type pointé. L'opérateur & récupère
 l'adresse d'une variable, tandis que * permet d'accéder à la valeur située à
 l'adresse pointée.
+
+
+Partie 2 AllocationVariablesC
+
+premier ligne taille:  total 10504K
+
+deuxieme ligne taille : total 18196K
+
+Partie 2 Tas_C_v1:
+
+Question: la procédure free fonctionne-t-elle bien ? Justifiez votre réponse.
+
+oui car elle permet d'empecher que pi2 de se retrouver avec 2 adresse en
+mémoire et donc de garder le meme écart entre pi1 et pi2 si on enleve free on remarque que l'écart augmente
+
+
+
+
+
+
